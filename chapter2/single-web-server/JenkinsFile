@@ -12,8 +12,3 @@ pipeline {
 }
 
 // Steps
-def buildApp() {
-    dir ('chapter2\single-web-server' ) {
-        bat "terraform apply"
-    }
-}
