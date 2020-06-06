@@ -30,8 +30,8 @@ resource "aws_security_group" "instance" {
   }
 
   egress {
-    from_port = var.server_port
-    to_port = var.server_port
+    from_port = 0
+    to_port = 0
     protocol = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
@@ -168,4 +168,8 @@ resource "aws_lb_listener_rule" "asg" {
 
 output "alb_dns_name" {
   value = aws_lb.example.dns_name
+}
+
+output "instance_example_dns" {
+  value = aws_instance.example.public_dns
 }
