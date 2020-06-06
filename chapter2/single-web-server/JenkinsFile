@@ -11,6 +11,6 @@ pipeline {
 def buildApp() {
 	dir ('chapter2/single-web-server' ) {
 	    bat "terraform init"
-	    bat "terraform apply"
+	    bat "terraform apply -auto-approve"
 	}
 }
