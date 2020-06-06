@@ -1,14 +1,12 @@
-#!/usr/bin/groovy
 
 pipeline {
-    agent any
-
+    agent { label 'master' }
     stages {
-
-        stage ('Build') {
-            steps { buildApp() }
+        stage('build') {
+            steps {
+                echo "Hello World!"
+                bat "ipconfig"
+            }
         }
     }
 }
-
-// Steps
