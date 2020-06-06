@@ -1,12 +1,15 @@
-
 pipeline {
     agent { label 'master' }
     stages {
-        stage('build') {
-            steps {
-                echo "Hello World!"
-                bat "ipconfig"
-            }
-        }
+        
+        stage("Build") {
+            steps { buildApp() }
+		}
     }
+}
+
+def buildApp() {
+	dir ('/chapter2/single-web-server' ) {
+	    bat "terraform init"
+	}
 }
