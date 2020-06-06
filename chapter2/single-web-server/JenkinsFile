@@ -1,0 +1,46 @@
+#!/usr/bin/groovy
+
+pipeline {
+    agent any
+
+    stages {
+
+        stage ('Build') {
+
+            steps {
+
+                echo 'Building...'
+
+            }
+        }
+
+        stage ('Test') {
+
+            steps {
+
+                echo 'Testing...' 
+                cmd "ipconfig /all"       
+
+            }
+        }
+
+        stage ('SonarQube') {
+
+            steps {
+
+                echo 'Testing SQube...'
+
+            }
+
+        }
+
+        stage ('Deploy') {
+
+            steps {
+
+                echo 'Deploy to Servers'
+
+            }
+        }
+    }
+}
